@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+      buildModules: ["@nuxt/typescript-build"],
     },
   },
 });
