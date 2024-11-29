@@ -5,11 +5,11 @@
         What Our Customers Are Saying...
       </h2>
     </div>
-    <div class="flex justify-center space-x-8 flex-wrap">
+    <div class="flex justify-center space-x-8 flex-wrap justify-items-center">
       <div
         v-for="(testimonial, index) in testimonials"
         :key="index"
-        class="h-[450px] w-96 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 relative"
+        class="testimonial-card h-[450px] w-96 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 relative"
       >
         <img
           :src="testimonial.image"
@@ -66,5 +66,40 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Custom styles if needed */
+/* Ensure desktop styles remain unchanged */
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  /* Ensure proper alignment for mobile */
+  .testimonial-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    align-items: center; /* Aligning content for mobile */
+  }
+
+  .testimonial-card img {
+    object-fit: cover;
+    height: 300px; /* Limit height for mobile */
+  }
+
+  .testimonial-card .content {
+    padding: 10px; /* Less padding for mobile */
+  }
+}
+
+@media (min-width: 768px) {
+  /* For larger screens, ensure they remain centered */
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

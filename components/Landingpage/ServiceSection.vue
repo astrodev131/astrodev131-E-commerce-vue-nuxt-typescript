@@ -88,10 +88,12 @@
       <div
         class="flex-1 bg-white rounded-lg p-6 md:p-12 shadow-md flex flex-col justify-between"
       >
-        <h2 class="text-3xl md:text-5xl font-bold mb-4">
+        <h2 class="text-3xl mt-20 md:text-5xl font-bold mb-4">
           Do You Want To Share Your Vehicle?
         </h2>
-        <p class="text-lg mt-5 mb-6">
+        <p
+          class="text-xl whitespace-break-spaces text-gray-500 mt-1 leading-loose mb-6"
+        >
           We'll Use Your Car's Location To Calculate Your Onboard Bonus. Each
           ZIP Code Will Belong To One Of Five Zones. Zones Are Based On Guest
           Demand For Cars— More Guest Demand Means A Higher Zone, And Bigger
@@ -99,7 +101,7 @@
           Aren't Eligible For The Onboard Bonus.
         </p>
         <button
-          class="bg-black text-white py-2 px-4 rounded shadow hover:bg-gray-800 flex items-center space-x-2"
+          class="bg-black text-white py-2 w-44 px-4 rounded shadow hover:bg-gray-800 flex items-center space-x-2"
         >
           <span>Learn More</span>
           <svg
@@ -131,9 +133,9 @@
 
     <!-- Why Choose Us Section -->
     <section
-      class="flex flex-col md:flex-row items-center justify-between py-16 px-6 md:px-12"
+      class="flex flex-col md:flex-row items-center justify-around py-16 px-6 md:px-12"
     >
-      <div class="text-left mb-8 md:mb-0 w-full md:w-1/2">
+      <div class="text-left mb-8 md:mb-0 w-full md:w-1/3">
         <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
           Why Choose Us
         </h2>
@@ -143,7 +145,7 @@
         </p>
       </div>
       <div
-        class="bg-white w-full md:w-1/2 rounded-lg shadow-md p-6 md:p-12 flex justify-around items-center"
+        class="bg-white w-full md:w-1/3 rounded-lg shadow-md p-6 md:p-12 flex justify-around items-center"
       >
         <div class="text-center">
           <span class="text-4xl font-bold text-gray-800">45k+</span>
