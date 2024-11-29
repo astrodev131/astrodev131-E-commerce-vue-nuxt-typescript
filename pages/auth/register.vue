@@ -1,8 +1,8 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex flex-col md:flex-row h-screen">
     <!-- Left Section -->
     <div
-      class="flex-1 flex flex-col justify-center items-center text-white px-6"
+      class="flex-1 flex flex-col justify-center items-center text-white px-6 py-10 md:px-12"
       style="
         background-image: url('/images/loginbg.jpg');
         background-size: cover;
@@ -10,11 +10,11 @@
         background-repeat: no-repeat;
       "
     >
-      <h1 class="text-4xl font-bold mb-4">Welcome to Drivee®</h1>
-      <p class="text-3xl mb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Drivee®</h1>
+      <p class="text-3xl md:text-4xl mb-8 text-center">
         the best global carsharing marketplace
       </p>
-      <span>
+      <span class="text-center md:text-left mb-6">
         Have a car? Earn money as a Host. Rent your dream car as a Guest.
       </span>
       <button
@@ -23,7 +23,7 @@
         <span>Play Video Intro</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-6 w-6 ml-2"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
@@ -35,23 +35,28 @@
 
     <!-- Right Section -->
     <div
-      class="flex-1 flex flex-col justify-center items-center bg-white px-10"
+      class="flex-1 flex flex-col justify-center items-center bg-white px-6 py-10 md:px-10 md:py-12"
     >
-      <h2 class="text-4xl font-semibold w-2/4 text-left">Drivee</h2>
+      <h2
+        class="text-4xl md:text-5xl font-semibold text-left w-full md:w-2/4 mb-4"
+      >
+        Drivee
+      </h2>
 
-      <h2 class="text-2xl mt-4 font-semibold w-2/4 text-left">
+      <h2
+        class="text-2xl md:text-3xl font-semibold text-left w-full md:w-2/4 mb-4"
+      >
         Create An Account.
       </h2>
 
-      <p class="text-gray-500 font-semibold mb-6 w-2/4 text-left">
-        <br />
+      <p class="text-gray-500 font-semibold mb-6 w-full md:w-2/4 text-left">
         We’d love to have you on board. Join over 500+ customers around the
         globe and enhance productivity.
       </p>
 
       <!-- Social Login Buttons -->
       <button
-        class="w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
+        class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +76,9 @@
         </svg>
         Continue with Facebook
       </button>
+
       <button
-        class="w-2/4 flex items-center justify-center px-4 py-2 mb-6 border rounded-md hover:bg-gray-100"
+        class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-6 border rounded-md hover:bg-gray-100"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +108,7 @@
       </button>
 
       <!-- Form -->
-      <form class="w-2/4">
+      <form class="w-full md:w-2/4">
         <div class="mb-4">
           <label for="name" class="block text-sm font-medium text-gray-700"
             >Name*</label
@@ -163,11 +169,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-// Script setup if needed for interactivity
-</script>
-
-<style scoped>
-/* Add any scoped styles here if necessary */
-</style>

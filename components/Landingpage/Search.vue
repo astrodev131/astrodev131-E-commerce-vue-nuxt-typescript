@@ -1,9 +1,12 @@
 <template>
   <section
-    class="bg-white w-10/12 ml-auto mr-auto text-black py-16 border border-gray-300 shadow-lg rounded-lg px-8 flex items-center justify-center -translate-y-2/4"
+    class="bg-white w-11/12 md:w-10/12 mx-auto text-black py-8 md:py-16 border border-gray-300 shadow-lg rounded-lg px-4 md:px-8 flex items-center justify-center -translate-y-2/4"
   >
-    <div class="flex items-center justify-center space-x-8 w-full max-w-4xl">
-      <div class="flex-1">
+    <div
+      class="flex flex-wrap md:flex-nowrap items-end justify-center space-y-6 md:space-y-0 md:space-x-8 w-full"
+    >
+      <!-- Location Selector -->
+      <div class="w-full md:flex-1">
         <label for="location" class="block text-sm font-bold mb-2"
           >Location</label
         >
@@ -14,7 +17,9 @@
           <option>Chicago</option>
         </select>
       </div>
-      <div class="flex-1">
+
+      <!-- Pickup Selector -->
+      <div class="w-full md:flex-1">
         <label for="pickup" class="block text-sm font-bold mb-2">Pick-UP</label>
         <select id="pickup" class="w-full p-3 border border-gray-300 rounded">
           <option>Select Location</option>
@@ -23,7 +28,9 @@
           <option>Chicago</option>
         </select>
       </div>
-      <div class="flex-1">
+
+      <!-- Date Selector -->
+      <div class="w-full md:flex-1">
         <label for="date" class="block text-sm font-bold mb-2">Date</label>
         <div class="relative">
           <input
@@ -52,9 +59,13 @@
           </div>
         </div>
       </div>
-      <div class="flex-1 flex items-center mt-6">
+
+      <!-- Search Button -->
+      <div
+        class="w-full md:flex-1 flex justify-center md:justify-end items-center"
+      >
         <button
-          class="bg-black text-white py-3 px-6 rounded shadow hover:bg-gray-800"
+          class="bg-black text-white py-3 w-full md:w-full rounded shadow hover:bg-gray-800"
         >
           Search Now
         </button>
@@ -66,7 +77,5 @@
 <script lang="ts" setup></script>
 
 <style scoped>
-.group:hover .group-hover\:block {
-  display: block;
-}
+/* No additional styles required */
 </style>
