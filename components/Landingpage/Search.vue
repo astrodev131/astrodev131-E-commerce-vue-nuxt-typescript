@@ -5,7 +5,6 @@
     <div
       class="flex flex-wrap md:flex-nowrap items-end justify-center space-y-6 md:space-y-0 md:space-x-8 w-full"
     >
-      <!-- Location Selector -->
       <div class="w-full md:flex-1">
         <label for="location" class="block text-sm font-bold mb-2"
           >Location</label
@@ -18,7 +17,6 @@
         </select>
       </div>
 
-      <!-- Pickup Selector -->
       <div class="w-full md:flex-1">
         <label for="pickup" class="block text-sm font-bold mb-2">Pick-UP</label>
         <select id="pickup" class="w-full p-3 border border-gray-300 rounded">
@@ -29,7 +27,6 @@
         </select>
       </div>
 
-      <!-- Date Selector -->
       <div class="w-full md:flex-1">
         <label for="date" class="block text-sm font-bold mb-2">Date</label>
         <div class="relative">
@@ -59,8 +56,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Search Button -->
       <div
         class="w-full md:flex-1 flex justify-center md:justify-end items-center"
       >
@@ -76,6 +71,4 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
-/* No additional styles required */
-</style>
+<style scoped></style>

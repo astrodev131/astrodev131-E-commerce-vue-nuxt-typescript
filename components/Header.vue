@@ -1,13 +1,12 @@
 <template>
   <header
-    class="bg-black text-white py-4 px-4 md:px-8 flex items-center justify-between flex-wrap"
+    class="bg-black text-white py-4 px-4 md:px-8 flex items-center justify-between flex-wrap relative"
   >
-    <!-- Logo -->
     <div class="text-xl font-semibold">Drivee</div>
 
-    <!-- Hamburger Menu -->
+    <!-- Hamburger Button -->
     <button
-      class="md:hidden focus:outline-none text-white"
+      class="md:hidden z-50 focus:outline-none text-white"
       @click="isMenuOpen = !isMenuOpen"
     >
       <svg
@@ -26,12 +25,32 @@
       </svg>
     </button>
 
-    <!-- Navigation -->
+    <!-- Mobile Dropdown Menu (hidden by default) -->
     <nav
-      class="w-full md:w-auto md:flex items-center space-y-4 md:space-y-0 md:space-x-8 mt-4 md:mt-0"
-      :class="{ hidden: !isMenuOpen }"
+      class="absolute top-0 left-0 w-full bg-black text-white md:hidden transition-transform transform"
+      :class="{ 'translate-y-0': isMenuOpen, '-translate-y-full': !isMenuOpen }"
     >
-      <!-- Hosting Dropdown -->
+      <div class="flex flex-col space-y-4 p-8">
+        <a href="#" class="text-white hover:underline">Hosting</a>
+        <a href="#" class="text-white hover:underline">Contact Us</a>
+        <a href="#" class="text-white hover:underline">Account</a>
+        <div class="flex justify-center space-x-4 mt-4">
+          <button
+            class="border border-white py-2 px-4 rounded hover:bg-white hover:text-black"
+          >
+            Sign In
+          </button>
+          <button
+            class="bg-white text-black py-2 px-4 rounded hover:bg-gray-300"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Desktop Menu (always visible on md and up) -->
+    <nav class="hidden md:flex items-center space-x-8">
       <div class="relative group">
         <button class="focus:outline-none flex items-center space-x-1">
           <span>Hosting</span>
@@ -50,7 +69,6 @@
             />
           </svg>
         </button>
-        <!-- Dropdown Menu -->
         <div
           class="absolute left-0 hidden mt-2 w-48 bg-white text-black py-2 rounded-md shadow-lg group-hover:block"
         >
@@ -63,13 +81,10 @@
           >
         </div>
       </div>
-
-      <!-- Contact Us Link -->
       <div>
         <a href="#" class="hover:underline">Contact Us</a>
       </div>
 
-      <!-- Account Dropdown -->
       <div class="relative group">
         <button class="focus:outline-none flex items-center space-x-1">
           <span>Account</span>
@@ -88,26 +103,21 @@
             />
           </svg>
         </button>
-        <!-- Dropdown Menu -->
-        <div
-          class="absolute left-0 hidden mt-2 w-48 bg-white text-black py-2 rounded-md shadow-lg group-hover:block"
-        >
-          <a href="#" class="block px-4 py-2 hover:bg-gray-200">Sign In</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-200">Register</a>
-        </div>
       </div>
     </nav>
 
-    <!-- Buttons -->
+    <!-- Desktop Sign In / Sign Up buttons -->
     <div
       class="w-full md:w-auto flex justify-center md:flex space-x-4 mt-4 md:mt-0"
     >
       <button
-        class="border border-white py-2 px-4 rounded hover:bg-white hover:text-black"
+        class="border hidden md:block border-white py-2 px-4 rounded hover:bg-white hover:text-black"
       >
         Sign In
       </button>
-      <button class="bg-white text-black py-2 px-4 rounded hover:bg-gray-300">
+      <button
+        class="bg-white hidden md:block text-black py-2 px-4 rounded hover:bg-gray-300"
+      >
         Sign Up
       </button>
     </div>
@@ -120,5 +130,8 @@ const isMenuOpen = ref(false);
 </script>
 
 <style scoped>
-/* Add any additional styles if necessary */
+/* Transition styles for smooth sliding of mobile menu */
+nav {
+  transition: transform 0.3s ease-in-out;
+}
 </style>

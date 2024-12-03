@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col md:flex-row h-screen">
-    <!-- Left Section -->
     <div
       class="flex-1 flex flex-col justify-center items-center text-white px-6 py-10 md:px-12"
       style="
@@ -27,13 +26,11 @@
           viewBox="0 0 24 24"
           fill="currentColor"
         >
-          <!-- Play Icon -->
           <path d="M5 3.5l15 8.5-15 8.5V3.5z" />
         </svg>
       </button>
     </div>
 
-    <!-- Right Section -->
     <div
       class="flex-1 flex flex-col justify-center items-center bg-white px-6 py-10 md:px-10 md:py-12"
     >
@@ -53,8 +50,6 @@
         We’d love to have you on board. Join over 500+ customers around the
         globe and enhance productivity.
       </p>
-
-      <!-- Social Login Buttons -->
       <button
         class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
       >
@@ -107,7 +102,6 @@
         Continue with Google
       </button>
 
-      <!-- Form -->
       <form class="w-full md:w-2/4">
         <div class="mb-4">
           <label for="name" class="block text-sm font-medium text-gray-700"

@@ -1,7 +1,6 @@
 <template>
   <footer class="bg-black text-white py-12 px-6">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Company Info -->
       <div>
         <h3 class="text-2xl font-bold mb-4">Drivee</h3>
         <p class="text-gray-400 mb-4">
@@ -58,8 +57,6 @@
           </a>
         </div>
       </div>
-
-      <!-- About Company -->
       <div>
         <h4 class="font-bold text-xl mb-4">About Company</h4>
         <ul class="text-gray-400 space-y-2">
@@ -72,8 +69,6 @@
           <li><a href="#">Term And Conditions</a></li>
         </ul>
       </div>
-
-      <!-- City -->
       <div>
         <h4 class="font-bold text-xl mb-4">City</h4>
         <ul class="text-gray-400 space-y-2">
@@ -87,7 +82,6 @@
         </ul>
       </div>
 
-      <!-- Vehicle Types -->
       <div>
         <h4 class="font-bold text-xl mb-4">Vehicle Types</h4>
         <ul class="text-gray-400 space-y-2">
@@ -106,5 +100,4 @@ export default {
 </script>
 
 <style scoped>
-/* Add custom styles if needed */
 </style>

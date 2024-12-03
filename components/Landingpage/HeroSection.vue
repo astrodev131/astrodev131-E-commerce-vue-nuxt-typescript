@@ -21,10 +21,6 @@
         </button>
       </div>
     </div>
-    <div class="flex space-x-8">
-      <!-- <img src="/images/download.jpg" alt="Car" class="w-1/2" />
-      <img src="/images/car-bike.jpg" alt="Bike" class="w-1/4" /> -->
-    </div>
   </section>
 </template>
 
