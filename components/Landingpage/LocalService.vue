@@ -6,14 +6,10 @@
       </h2>
     </div>
 
-    <!-- Services Container -->
     <div class="flex items-center flex-wrap justify-center gap-6 md:gap-12">
-      <!-- Left Arrow --
-
-      <!-- Services List -->
       <div
         ref="scrollContainer"
-        class="flex flex-wrap md:flex-nowrap gap-6 md:gap-12 overflow-x-auto no-scrollbar w-full justify-center"
+        class="flex flex-wrap md:flex-nowrap gap-6 md:gap-6 overflow-x-auto no-scrollbar w-full justify-center"
       >
         <div
           v-for="(service, index) in services"
@@ -36,8 +32,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Right Arrow -->
     </div>
   </section>
 </template>
@@ -106,7 +100,7 @@ export default defineComponent({
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 </style>

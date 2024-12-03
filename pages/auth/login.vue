@@ -1,8 +1,7 @@
 <template>
   <div class="flex flex-col md:flex-row h-screen">
-    <!-- Left Section -->
     <div
-      class="flex-1 flex flex-col justify-center items-center text-white px-6 py-10 md:px-12 md:py-16"
+      class="flex-1 flex flex-col justify-center items-center text-white px-6 py-10 md:px-12"
       style="
         background-image: url('/images/loginbg.jpg');
         background-size: cover;
@@ -10,17 +9,15 @@
         background-repeat: no-repeat;
       "
     >
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4 text-center md:text-left">
-        Welcome to Drivee®
-      </h1>
-      <p class="text-xl sm:text-2xl mb-6 text-center md:text-left">
-        The best global carsharing marketplace
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Drivee®</h1>
+      <p class="text-3xl md:text-4xl mb-8 text-center">
+        the best global carsharing marketplace
       </p>
-      <span class="text-lg text-center md:text-left">
+      <span class="text-center md:text-left mb-6">
         Have a car? Earn money as a Host. Rent your dream car as a Guest.
       </span>
       <button
-        class="mt-6 flex items-center px-4 py-2 bg-white text-black font-medium hover:bg-gray-200 rounded-md"
+        class="rounded-sm mt-4 flex items-center px-4 py-2 bg-white text-black font-medium hover:bg-gray-200"
       >
         <span>Play Video Intro</span>
         <svg
@@ -29,30 +26,33 @@
           viewBox="0 0 24 24"
           fill="currentColor"
         >
-          <!-- Play Icon -->
           <path d="M5 3.5l15 8.5-15 8.5V3.5z" />
         </svg>
       </button>
     </div>
 
-    <!-- Right Section -->
     <div
-      class="flex-1 flex flex-col justify-center items-center bg-white px-6 py-10 md:px-12 md:py-16"
+      class="flex-1 flex flex-col justify-center items-center bg-white px-6 py-10 md:px-10 md:py-12"
     >
-      <h2 class="text-3xl sm:text-4xl font-semibold w-full text-left mb-4">
+      <h2
+        class="text-4xl md:text-5xl font-semibold text-left w-full md:w-2/4 mb-4"
+      >
         Drivee
       </h2>
-      <h2 class="text-2xl font-semibold w-full text-left mb-4">
-        Login with your account.
+
+      <h2
+        class="text-2xl md:text-3xl font-semibold text-left w-full md:w-2/4 mb-4"
+      >
+        Sign In Your Account
       </h2>
-      <p class="text-gray-500 font-semibold mb-6 w-full text-left">
+
+      <p class="text-gray-500 font-semibold mb-6 w-full md:w-2/4 text-left">
         We’d love to have you on board. Join over 500+ customers around the
         globe and enhance productivity.
       </p>
 
-      <!-- Social Login Buttons -->
       <button
-        class="w-full sm:w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
+        class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -72,8 +72,9 @@
         </svg>
         Continue with Facebook
       </button>
+
       <button
-        class="w-full sm:w-2/4 flex items-center justify-center px-4 py-2 mb-6 border rounded-md hover:bg-gray-100"
+        class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-6 border rounded-md hover:bg-gray-100"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -102,8 +103,7 @@
         Continue with Google
       </button>
 
-      <!-- Form -->
-      <form class="w-full sm:w-2/4">
+      <form class="w-full md:w-2/4">
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700"
             >Email*</label
@@ -126,39 +126,20 @@
             placeholder="Create a password"
           />
         </div>
-        <div class="flex items-center mb-4">
-          <input
-            type="checkbox"
-            id="terms"
-            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-          />
-          <label for="terms" class="ml-2 block text-sm text-gray-700">
-            I agree to the Terms and Privacy Policy
-          </label>
-        </div>
         <button
           type="submit"
           class="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-gray-800"
         >
-          Sign up
+          Sign in
         </button>
       </form>
 
       <p class="text-sm text-gray-500 mt-4">
-        Don't you have your account?
-        <a href="register" class="text-blue-600 hover:underline"
+        Already have an account?
+        <a href="/auth/register" class="text-blue-600 hover:underline"
           >Sign up here.</a
         >
       </p>
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-// Script setup if needed for interactivity
-</script>
-
-<style scoped>
-/* Add any scoped styles here if necessary */
-</style>
-

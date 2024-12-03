@@ -6,7 +6,6 @@
       </h2>
     </div>
 
-    <!-- Tabs -->
     <div class="flex flex-wrap justify-center space-x-8 mb-12">
       <button
         v-for="(tab, index) in tabs"
@@ -23,8 +22,6 @@
         {{ tab }}
       </button>
     </div>
-
-    <!-- FAQ List -->
     <div
       class="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-5xl mx-auto px-4 sm:px-6"
     >
@@ -146,7 +143,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-/* Improved Animations */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease-in-out;
@@ -155,8 +151,6 @@ export default defineComponent({
 .fade-leave-to {
   opacity: 0;
 }
-
-/* Optional: Add custom spacing for better readability */
 @media (max-width: 640px) {
   .text-lg {
     font-size: 1.125rem;
