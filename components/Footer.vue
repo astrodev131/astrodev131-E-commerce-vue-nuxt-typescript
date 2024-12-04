@@ -92,12 +92,3 @@
     </div>
   </footer>
 </template>
-
-<script lang="ts">
-export default {
-  name: "FooterSection",
-};
-</script>
-
-<style scoped>
-</style>
