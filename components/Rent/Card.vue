@@ -1,6 +1,6 @@
 <template>
   <section
-    class="p-4 w- border-solid border-gray-300 border-2 bg-white rounded-xl"
+    class="p-12 md:p-4 border-solid border-gray-300 border-2 bg-white rounded-xl"
   >
     <div class="w-80 h-44">
       <img class="w-10/12 h-10/12 m-auto" :src="img" />
@@ -35,7 +35,7 @@
         <button
           class="bg-black text-white p-2 w-full md:w-full rounded shadow hover:bg-gray-800"
         >
-          Rent Bike
+          Rent {{ text }}
         </button>
       </div>
     </div>
@@ -46,6 +46,7 @@ import { defineProps } from "vue";
 
 interface Props {
   img: string;
+  text: string;
 }
 
 defineProps<Props>();

@@ -12,17 +12,19 @@
       <div
         class="col-start-1 md:col-start-3 text-center col-span-1 md:col-span-4 text-white text-3xl md:text-5xl"
       >
-        Rent A Bike Rent Your Freedom
+        Rent A {{text}} Rent Your Freedom
       </div>
     </div>
 
     <div
       class="w-60 md:w-80 col-start-1 md:col-start-6 h-60 md:h-80 mx-auto md:mx-0"
     >
-      <img
-        class="w-full h-full object-contain"
-        src="/public/images/bycycle.svg"
-      />
+      <img :src="imgofbg" class="w-full h-full object-contain" />
     </div>
   </section>
 </template>
+
+<script lang="ts" setup>
+import { defineProps } from "vue";
+defineProps<{ imgofbg: string; text:string }>();
+</script>
