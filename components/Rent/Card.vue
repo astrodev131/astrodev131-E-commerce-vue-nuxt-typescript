@@ -2,8 +2,8 @@
   <section
     class="p-4 w- border-solid border-gray-300 border-2 bg-white rounded-xl"
   >
-    <div class="w-80">
-      <img class="w-10/12 h-10/12 m-auto" src="/public/images/bike1.png" />
+    <div class="w-80 h-44">
+      <img class="w-10/12 h-10/12 m-auto" :src="img" />
     </div>
 
     <div class="mt-4 text-2xl font-bold">CBR</div>
@@ -41,3 +41,12 @@
     </div>
   </section>
 </template>
+<script lang="ts" setup>
+import { defineProps } from "vue";
+
+interface Props {
+  img: string;
+}
+
+defineProps<Props>();
+</script>
