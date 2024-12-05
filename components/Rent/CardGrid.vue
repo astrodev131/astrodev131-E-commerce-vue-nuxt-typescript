@@ -1,9 +1,11 @@
 <template>
   <section class="flex w-10/12 justify-center mx-auto gap-10 flex-wrap my-5">
-    <Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card /><Card />
+    <Card v-for="(image, index) in images" :key="index" :text="text" :img="image" />
   </section>
 </template>
 <script lang="ts" setup>
-let arr: Array<undefined> = new Array(5);
 import Card from "./Card.vue";
+import { defineProps } from "vue";
+
+defineProps<{ images: Array<string>; text: string }>();
 </script>
