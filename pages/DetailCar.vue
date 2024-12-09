@@ -4,12 +4,13 @@
 <script setup lang="js">
 import Index from '../components/Detail/Index.vue';
     const images = {
-       img: "http://172.20.106.13:3000/images/bike6.png",
-      img1: "http://172.20.106.13:3000/images/chip1-1.png",
-      img2: "http://172.20.106.13:3000/images/chip1-2.png",
-      img3: "http://172.20.106.13:3000/images/chip1-3.png",
-      img4: "http://172.20.106.13:3000/images/motercyclebg.png",
-    }
+      img: "http://172.20.106.13:3000/images/car8.png",
+      img1: "http://172.20.106.13:3000/images/chip1-1-c.png",
+      img2: "http://172.20.106.13:3000/images/chip1-2-c.png",
+      img3: "http://172.20.106.13:3000/images/chip1-3-c.png",
+      img4: "http://172.20.106.13:3000/images/car_bg.png"
+    };
+
 
 
     const specifications = [

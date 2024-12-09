@@ -35,16 +35,20 @@
         <a href="#" class="text-white hover:underline">Contact Us</a>
         <a href="#" class="text-white hover:underline">Account</a>
         <div class="flex justify-center space-x-4 mt-4">
-          <button
-            class="border border-white py-2 px-4 rounded hover:bg-white hover:text-black"
-          >
-            Sign In
-          </button>
-          <button
-            class="bg-white text-black py-2 px-4 rounded hover:bg-gray-300"
-          >
-            Sign Up
-          </button>
+          <a href="/login">
+            <button
+              class="border border-white py-2 px-4 rounded hover:bg-white hover:text-black"
+            >
+              Sign In
+            </button>
+          </a>
+          <a href="/register">
+            <button
+              class="bg-white text-black py-2 px-4 rounded hover:bg-gray-300"
+            >
+              Sign Up
+            </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -110,16 +114,20 @@
     <div
       class="w-full md:w-auto flex justify-center md:flex space-x-4 mt-4 md:mt-0"
     >
-      <button
-        class="border hidden md:block border-white py-2 px-4 rounded hover:bg-white hover:text-black"
+      <a href="/login"
+        ><button
+          class="border hidden md:block border-white py-2 px-4 rounded hover:bg-white hover:text-black"
+        >
+          Sign In
+        </button></a
       >
-        Sign In
-      </button>
-      <button
-        class="bg-white hidden md:block text-black py-2 px-4 rounded hover:bg-gray-300"
+      <a href="/register">
+        <button
+          class="bg-white hidden md:block text-black py-2 px-4 rounded hover:bg-gray-300"
+        >
+          Sign Up
+        </button></a
       >
-        Sign Up
-      </button>
     </div>
   </header>
 </template>

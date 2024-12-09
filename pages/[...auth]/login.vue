@@ -136,7 +136,7 @@
 
       <p class="text-sm text-gray-500 mt-4">
         Already have an account?
-        <a href="/auth/register" class="text-blue-600 hover:underline"
+        <a href="/register" class="text-blue-600 hover:underline"
           >Sign up here.</a
         >
       </p>

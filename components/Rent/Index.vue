@@ -1,9 +1,9 @@
 <template>
-  <section class="bg-zinc-50">
+  <div class="bg-zinc-50">
     <HeroSection :text="text" :imgofbg="imgofbg"></HeroSection>
     <Search></Search>
     <CardGrid :text="text" :images="images"></CardGrid>
-  </section>
+  </div>
 </template>
 
 <script lang="ts" setup>

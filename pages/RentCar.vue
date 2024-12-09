@@ -1,11 +1,9 @@
 <template>
-  <section>
-    <Index
-      text="Car"
-      :images="images"
-      imgofbg="http://172.20.106.13:3000/_nuxt/public/images/car.svg"
-    ></Index>
-  </section>
+  <Index
+    text="Car"
+    :images="images"
+    imgofbg="http://172.20.106.13:3000/_nuxt/public/images/car.svg"
+  ></Index>
 </template>
 
 <script setup>

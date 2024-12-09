@@ -2,17 +2,17 @@
   <div class="flex justify-center items-center gap-10 mt-24 flex-wrap">
     <div class="w-full md:w-6/12">
       <div>
-        <img class="w-full mr-auto" src="/images/bike6.png" />
+        <img class="w-full mr-auto" :src="images.images.img" />
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div>
-          <img class="rounded-lg w-full h-auto" src="/images/chip1-1.png" />
+          <img class="rounded-lg w-full h-full" :src="images.images.img1" />
         </div>
         <div>
-          <img class="rounded-lg w-full h-auto" src="/images/chip1-2.png" />
+          <img class="rounded-lg w-full h-full" :src="images.images.img2" />
         </div>
         <div>
-          <img class="rounded-lg w-full h-auto" src="/images/chip1-3.png" />
+          <img class="rounded-lg w-full h-full" :src="images.images.img2" />
         </div>
       </div>
     </div>
@@ -162,46 +162,65 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { ref, computed } from "vue";
+import { defineProps } from "vue";
 
-<script>
-export default {
-  data() {
-    return {
-      location: "",
-      pickUpDate: "",
-      pickUpTime: "",
-      dropOffDate: "",
-      dropOffTime: "",
-    };
-  },
-  computed: {
-    totalHours() {
-      if (
-        this.pickUpDate &&
-        this.dropOffDate &&
-        this.pickUpTime &&
-        this.dropOffTime
-      ) {
-        const pickUpDateTime = new Date(
-          `${this.pickUpDate}T${this.pickUpTime}`
-        );
-        const dropOffDateTime = new Date(
-          `${this.dropOffDate}T${this.dropOffTime}`
-        );
+interface Images {
+  images: {
+    img: string;
+    img1: string;
+    img2: string;
+    img3: string;
+  };
+}
+const images = defineProps<Images>();
 
-        const durationInMillis = dropOffDateTime - pickUpDateTime;
-        const totalHours = durationInMillis / (1000 * 60 * 60); // Convert milliseconds to hours
 
-        return totalHours.toFixed(2); // Format to 2 decimal places
-      }
+// const images = ref<Images>({
+//   img: "http://172.20.106.13:3000/images/bike6.png",
+//   img1: "http://172.20.106.13:3000/images/chip1-1.png",
+//   img2: "http://172.20.106.13:3000/images/chip1-2.png",
+//   img3: "http://172.20.106.13:3000/images/chip1-3.png",
+// });
+
+const location = ref("");
+const pickUpDate = ref("");
+const pickUpTime = ref("");
+const dropOffDate = ref("");
+const dropOffTime = ref("");
+
+const totalHours: any = computed(() => {
+  if (
+    pickUpDate.value &&
+    dropOffDate.value &&
+    pickUpTime.value &&
+    dropOffTime.value
+  ) {
+    const pickUpDateTime = new Date(`${pickUpDate.value}T${pickUpTime.value}`);
+    const dropOffDateTime = new Date(
+      `${dropOffDate.value}T${dropOffTime.value}`
+    );
+
+    if (isNaN(pickUpDateTime.getTime()) || isNaN(dropOffDateTime.getTime())) {
       return 0;
-    },
-    price() {
-      const ratePerHour = 20; // Example rate per hour, adjust as needed
-      return (this.totalHours * ratePerHour).toFixed(2); // Calculate total price
-    },
-  },
-};
+    }
+
+    const durationInMillis =
+      dropOffDateTime.getTime() - pickUpDateTime.getTime();
+    return durationInMillis > 0
+      ? (durationInMillis / (1000 * 60 * 60)).toFixed(2)
+      : 0;
+  }
+  return 0;
+});
+
+const price = computed(() => {
+  const ratePerHour = 20; // Example rate per hour
+  return totalHours.value > 0
+    ? (Number(totalHours.value) * ratePerHour).toFixed(2)
+    : "0.00";
+});
 </script>
 
 <style scoped>
