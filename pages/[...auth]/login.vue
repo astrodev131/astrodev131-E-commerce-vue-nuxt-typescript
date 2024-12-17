@@ -103,17 +103,24 @@
         Continue with Google
       </button>
 
-      <form class="w-full md:w-2/4">
+      <div class="w-full md:w-2/4">
         <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700"
             >Email*</label
           >
           <input
             type="email"
+            v-model="formData.email"
             id="email"
             class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             placeholder="Enter your email"
           />
+          <p
+            v-if="useAuthStore().validation?.email"
+            class="text-red-500 text-xs mt-1"
+          >
+            Please provide a valid email
+          </p>
         </div>
         <div class="mb-6">
           <label for="password" class="block text-sm font-medium text-gray-700"
@@ -121,18 +128,26 @@
           >
           <input
             type="password"
+            v-model="formData.password"
             id="password"
             class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             placeholder="Create a password"
           />
+          <p
+            v-if="useAuthStore().validation?.password"
+            class="text-red-500 text-xs mt-1"
+          >
+            Password is required
+          </p>
         </div>
         <button
           type="submit"
-          class="w-full px-4 py-2 text-white bg-black rounded-md hover:bg-gray-800"
+          @click="login"
+          class="w-full px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600"
         >
           Sign in
         </button>
-      </form>
+      </div>
 
       <p class="text-sm text-gray-500 mt-4">
         Already have an account?
@@ -143,3 +158,24 @@
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
+import { useAuthStore } from "../../stores/auth"; // import the auth store we just created
+const formData = ref({
+  email: "",
+  password: "",
+});
+
+const { loginUser } = useAuthStore(); // use loginUser action from  auth store
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive wih storeToRefs
+const router = useRouter();
+
+const login = async () => {
+  await loginUser(formData.value); // Wait for authentication
+  if (authenticated.value) {
+    router.push("/"); // Redirect if authenticated
+  } else {
+    console.error("Authentication failed");
+  }
+};
+</script>
