@@ -43,14 +43,13 @@
       <h2
         class="text-2xl md:text-3xl font-semibold text-left w-full md:w-2/4 mb-4"
       >
-        Sign In Your Account
+        Create An Account.
       </h2>
 
       <p class="text-gray-500 font-semibold mb-6 w-full md:w-2/4 text-left">
         We’d love to have you on board. Join over 500+ customers around the
         globe and enhance productivity.
       </p>
-
       <button
         class="w-full md:w-2/4 flex items-center justify-center px-4 py-2 mb-4 border rounded-md hover:bg-gray-100"
       >
@@ -105,6 +104,24 @@
 
       <div class="w-full md:w-2/4">
         <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700"
+            >Name*</label
+          >
+          <input
+            type="text"
+            id="name"
+            v-model="formData.name"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Enter your name"
+          />
+          <p
+            v-if="useAuthStore().validation?.name"
+            class="text-red-500 text-xs mt-1"
+          >
+            Name is required
+          </p>
+        </div>
+        <div class="mb-4">
           <label for="email" class="block text-sm font-medium text-gray-700"
             >Email*</label
           >
@@ -137,45 +154,70 @@
             v-if="useAuthStore().validation?.password"
             class="text-red-500 text-xs mt-1"
           >
-            Password is required
+            Password must be at least 6 characters long
           </p>
         </div>
+        <div class="flex items-center mb-4">
+          <input
+            type="checkbox"
+            id="terms"
+            v-model="inbox"
+            @change="handleChange"
+            class="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          />
+          <label for="terms" class="ml-2 block text-sm text-gray-700">
+            I agree to the Terms and Privacy Policy
+          </label>
+        </div>
         <button
+          @click="register"
+          :disabled="!inbox"
           type="submit"
-          @click="login"
-          class="w-full px-4 py-2 text-white bg-green-500 rounded-md hover:bg-green-600"
+          class="w-full px-4 py-2 text-white rounded-md hover:bg-gray-800"
+          :class="{
+            'bg-gray-400 cursor-not-allowed opacity-50': !inbox,
+            'bg-green-500 hover:bg-green-600': inbox,
+          }"
         >
-          Sign in
+          Sign up
         </button>
       </div>
 
       <p class="text-sm text-gray-500 mt-4">
         Already have an account?
-        <a href="/register" class="text-blue-600 hover:underline"
-          >Sign up here.</a
-        >
+        <a href="/login" class="text-blue-600 hover:underline">Login here.</a>
       </p>
     </div>
   </div>
 </template>
-<script lang="ts" setup>
+<script setup lang="ts">
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
-import { useAuthStore } from "../../stores/auth"; // import the auth store we just created
-const formData = ref({
-  email: "",
-  password: "",
-});
-
-const { loginUser } = useAuthStore(); // use loginUser action from  auth store
+import { useAuthStore } from "../stores/auth"; // import the auth store we just created
+import { ref } from "vue";
+const { registerUser } = useAuthStore(); // use loginUser action from  auth store
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive wih storeToRefs
 const router = useRouter();
 
-const login = async () => {
-  await loginUser(formData.value); // Wait for authentication
+// Define reactive form data
+
+const formData = ref({
+  name: "",
+  email: "",
+  password: "",
+});
+const inbox = ref<any>(false);
+
+const register = async () => {
+  await registerUser(formData.value); // Wait for authentication
   if (authenticated.value) {
     router.push("/"); // Redirect if authenticated
   } else {
     console.error("Authentication failed");
   }
 };
+const handleChange = () => {
+  console.log(inbox.value); // Logs `true` when checked, `false` when unchecked
+};
+console.log(inbox);
 </script>
+<script lang="ts" setup></script>
