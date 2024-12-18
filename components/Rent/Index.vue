@@ -12,5 +12,9 @@ import HeroSection from "./HeroSection.vue";
 import Search from "./Search.vue";
 import { defineProps } from "vue";
 
-defineProps<{ images: Array<string>; imgofbg: string; text: string }>();
+defineProps<{
+  images: Array<{ name: string; img: string; price: number }>;
+  imgofbg: string;
+  text: string;
+}>();
 </script>

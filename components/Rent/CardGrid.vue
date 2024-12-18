@@ -4,7 +4,7 @@
       v-for="(image, index) in images"
       :key="index"
       :text="text"
-      :img="image"
+      :img="image.img"
     />
   </div>
 </template>
@@ -12,5 +12,8 @@
 import Card from "./Card.vue";
 import { defineProps } from "vue";
 
-defineProps<{ images: Array<string>; text: string }>();
+defineProps<{
+  images: Array<{ name: string; img: string; price: number }>;
+  text: string;
+}>();
 </script>
