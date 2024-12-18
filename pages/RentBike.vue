@@ -1,25 +1,35 @@
 <template>
-    <Index
-      text="Bike"
-      :images="images"
-      imgofbg="http://172.20.106.13:3000/_nuxt/public/images/bike.svg"
-    ></Index>
+  <Index
+    text="Car"
+    :data="data"
+    imgofbg="http://172.20.106.13:3000/_nuxt/public/images/bike.svg"
+  />
 </template>
-
 <script setup>
 import Index from "../components/Rent/Index.vue";
-const images = [
-  "http://172.20.106.13:3000/_nuxt/public/images/bike1.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike2.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike3.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike4.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike5.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike6.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike7.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike8.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike9.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike10.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike11.png",
-  "http://172.20.106.13:3000/_nuxt/public/images/bike12.png",
-];
+
+import axios from "axios";
+import { reactive, onMounted } from "vue";
+
+// Reactive data for storing fetched car data
+const data = reactive([]);
+
+// Function to fetch data from the server
+const getData = () => {
+  axios
+    .get("http://localhost:5000/bike/getdata")
+    .then((res) => {
+      // Clear the array and populate it with the response data
+      data.splice(0, data.length, ...res.data);
+      console.log(data, "Data after population"); // Log the data after population
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+};
+
+// Fetch data when the component is mounted
+onMounted(() => {
+  getData();
+});
 </script>
