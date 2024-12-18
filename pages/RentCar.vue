@@ -1,7 +1,7 @@
 <template>
   <Index
     text="Car"
-    :images="data"
+    :data="data"
     imgofbg="http://172.20.106.13:3000/_nuxt/public/images/car.svg"
   />
 </template>
@@ -14,7 +14,7 @@ import { reactive, onMounted } from "vue";
 const data = reactive([]);
 
 // Function to fetch data from the server
-const image = () => {
+const getData = () => {
   axios
     .get("http://localhost:5000/car/getdata")
     .then((res) => {
@@ -29,6 +29,6 @@ const image = () => {
 
 // Fetch data when the component is mounted
 onMounted(() => {
-  image();
+  getData();
 });
 </script>

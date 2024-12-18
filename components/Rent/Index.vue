@@ -2,7 +2,7 @@
   <div class="bg-zinc-50">
     <HeroSection :text="text" :imgofbg="imgofbg"></HeroSection>
     <Search></Search>
-    <CardGrid :text="text" :images="images"></CardGrid>
+    <CardGrid :text="text" :data="data"></CardGrid>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import Search from "./Search.vue";
 import { defineProps } from "vue";
 
 defineProps<{
-  images: Array<{ name: string; img: string; price: number }>;
+  data: Array<{ name: string; img: string; price: number }>;
   imgofbg: string;
   text: string;
 }>();
