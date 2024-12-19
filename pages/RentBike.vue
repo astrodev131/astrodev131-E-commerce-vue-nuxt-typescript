@@ -1,6 +1,6 @@
 <template>
   <Index
-    text="Car"
+    text="Bike"
     :data="data"
     imgofbg="http://172.20.106.13:3000/_nuxt/public/images/bike.svg"
   />

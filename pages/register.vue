@@ -193,10 +193,11 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "../stores/auth"; // import the auth store we just created
+import { useRouter } from "vue-router";
 import { ref } from "vue";
+const router = useRouter();
 const { registerUser } = useAuthStore(); // use loginUser action from  auth store
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive wih storeToRefs
-const router = useRouter();
 
 // Define reactive form data
 

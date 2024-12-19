@@ -13,7 +13,7 @@ import Search from "./Search.vue";
 import { defineProps } from "vue";
 
 defineProps<{
-  data: Array<{ name: string; img: string; price: number }>;
+  data: Array<{ name: string; img: string; price: number; _id: string }>;
   imgofbg: string;
   text: string;
 }>();

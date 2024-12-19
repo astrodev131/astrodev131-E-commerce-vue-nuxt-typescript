@@ -5,11 +5,13 @@
   >
     <!-- Car Details -->
     <div class="mb-12 lg:mb-24">
-      <strong class="text-black text-2xl lg:text-3xl">BMW M2 2020</strong>
+      <strong class="text-black text-2xl lg:text-3xl">{{
+        overviewdata.name
+      }}</strong>
       <p class="mt-4 text-lg sm:w-8/12 lg:w-5/12 xl:w-6/12 lg:text-xl">
-        The BMW M2 Is The High-Performance Version Of The 2 Series 2-Door Coupé.
-        The First Generation Of The M2 Is The F87 Coupé And Is Powered By
-        Turbocharged.
+        The {{ overviewdata.name }} Is The High-Performance Version Of The 2
+        Series 2-Door Coupé. The First Generation Of The M2 Is The F87 Coupé And
+        Is Powered By Turbocharged.
       </p>
     </div>
 
@@ -50,12 +52,12 @@ interface Specification {
 }
 
 interface Props {
-  images: {
-    img: string;
+  overviewdata: {
     img1: string;
     img2: string;
     img3: string;
     img4: string;
+    name: string;
   };
   specifications: Array<Specification>;
 }
@@ -64,7 +66,7 @@ interface Props {
 const props = defineProps<Props>();
 
 // Reactive state for the background image
-const image = ref(props.images.img4);
+const image = ref(props.overviewdata.img4);
 </script>
 <style lang="css">
 /* Section padding */

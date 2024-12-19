@@ -1,12 +1,13 @@
 <template>
   <section
-    class="p-12 md:p-4 border-solid border-gray-300 border-2 bg-white rounded-xl"
+    class="p-12 md:p-4 border-solid border-gray-300 border-2 bg-white hover:shadow-2xl rounded-xl transition-all duration-300"
+    @click="handleClick"
   >
     <div class="w-80 h-44">
       <img class="w-10/12 h-10/12 m-auto" :src="img" />
     </div>
 
-    <div class="mt-4 text-2xl font-bold">CBR</div>
+    <div class="mt-4 text-2xl font-bold">{{ name }}</div>
 
     <div class="flex mt-2 justify-between text-gray-600">
       <div>
@@ -43,11 +44,19 @@
 </template>
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const handleClick = () => {
+  return router.push(`./detail${props.text}/${props.id}`);
+};
 
 interface Props {
   img: string;
   text: string;
+  name: string;
+  id: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 </script>

@@ -2,17 +2,26 @@
   <div class="flex justify-center items-center gap-10 mt-24 flex-wrap">
     <div class="w-full md:w-6/12">
       <div>
-        <img class="w-full mr-auto" :src="images.images.img" />
+        <img class="w-full mr-auto" :src="images.overviewdata.img3" />
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <div>
-          <img class="rounded-lg w-full h-full" :src="images.images.img1" />
+          <img
+            class="rounded-lg w-full h-full"
+            :src="images.overviewdata.img1"
+          />
         </div>
         <div>
-          <img class="rounded-lg w-full h-full" :src="images.images.img2" />
+          <img
+            class="rounded-lg w-full h-full"
+            :src="images.overviewdata.img2"
+          />
         </div>
         <div>
-          <img class="rounded-lg w-full h-full" :src="images.images.img2" />
+          <img
+            class="rounded-lg w-full h-full"
+            :src="images.overviewdata.img3"
+          />
         </div>
       </div>
     </div>
@@ -166,16 +175,15 @@
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
 
-interface Images {
-  images: {
-    img: string;
+interface overviewdata {
+  overviewdata: {
     img1: string;
     img2: string;
     img3: string;
+    img4: string;
   };
 }
-const images = defineProps<Images>();
-
+const images = defineProps<overviewdata>();
 
 // const images = ref<Images>({
 //   img: "http://172.20.106.13:3000/images/bike6.png",

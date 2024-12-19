@@ -1,6 +1,9 @@
 <template>
-  <Overview :images="images"></Overview>
-  <Description :specifications="specifications" :images="images"></Description>
+  <Overview :overviewdata="overviewdata"></Overview>
+  <Description
+    :specifications="specifications"
+    :overviewdata="overviewdata"
+  ></Description>
 </template>
 
 <script setup lang="ts">
@@ -9,11 +12,12 @@ import Overview from "./Overview.vue";
 import { defineProps } from "vue";
 
 // Define the interface for the `images` prop
-interface Images {
-  img: string;
+interface overviewdata {
   img1: string;
   img2: string;
   img3: string;
+  img4: string;
+  name: string;
 }
 
 // Define the interface for each specification
@@ -24,7 +28,7 @@ interface Specification {
 
 // Use the interfaces with defineProps
 defineProps<{
-  images: Images;
+  overviewdata: overviewdata;
   specifications: Specification[];
 }>();
 </script>

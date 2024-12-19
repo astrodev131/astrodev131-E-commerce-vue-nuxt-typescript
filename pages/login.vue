@@ -159,16 +159,16 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useAuthStore } from "../stores/auth";
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
-import { useAuthStore } from "../stores/auth"; // import the auth store we just created
+import { useRouter } from "vue-router";
+import { ref } from "vue";
 const formData = ref({
   email: "",
   password: "",
 });
 
-const { loginUser } = useAuthStore(); // use loginUser action from  auth store
+const { loginUser } = useAuthStore(); // use loginUser actio  n from  auth store
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive wih storeToRefs
 const router = useRouter();
 
