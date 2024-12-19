@@ -161,9 +161,9 @@
           <div class="flex justify-center mt-8">
             <button
               type="submit"
-              class="px-6 py-4 w-full text-white bg-gray-600 rounded-lg shadow-md"
+              class="px-6 py-4 w-full text-white hover:bg-gray-600 bg-gray-800 rounded-lg shadow-md"
             >
-              Submit
+              BOOK NOW
             </button>
           </div>
         </form>
@@ -172,6 +172,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import axios from "axios";
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
 
@@ -229,6 +230,10 @@ const price = computed(() => {
     ? (Number(totalHours.value) * ratePerHour).toFixed(2)
     : "0.00";
 });
+
+const Booknow = async() => {
+  await axios.post("",data).then()
+}
 </script>
 
 <style scoped>
