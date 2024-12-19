@@ -171,6 +171,9 @@ const formData = ref({
 const { loginUser } = useAuthStore(); // use loginUser actio  n from  auth store
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive wih storeToRefs
 const router = useRouter();
+const token = useCookie("token");
+
+console.log(token.value, "@@##");
 
 const login = async () => {
   await loginUser(formData.value); // Wait for authentication

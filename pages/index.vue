@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+
 import Search from "../components/Landingpage/Search.vue";
 import HeroSection from "../components/Landingpage/HeroSection.vue";
 import ServiceSection from "../components/Landingpage/ServiceSection.vue";

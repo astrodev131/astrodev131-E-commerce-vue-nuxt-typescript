@@ -175,6 +175,9 @@
 import axios from "axios";
 import { ref, computed } from "vue";
 import { defineProps } from "vue";
+import { useAuthStore } from "../../stores/auth";
+const userdata = useAuthStore()
+console.log(userdata,"111111112222222222")
 
 interface overviewdata {
   overviewdata: {
@@ -182,6 +185,7 @@ interface overviewdata {
     img2: string;
     img3: string;
     img4: string;
+    name: string;
   };
 }
 const images = defineProps<overviewdata>();
@@ -231,9 +235,18 @@ const price = computed(() => {
     : "0.00";
 });
 
-const Booknow = async() => {
-  await axios.post("",data).then()
-}
+const Booknow = async () => {
+  const data = {
+    // useremail,
+    name: images.overviewdata.name,
+    pickuplocation: location,
+    date: pickUpDate,
+    returndate: dropOffDate,
+    payment: price,
+    status: "Booking",
+  };
+  await axios.post("http://localhost:5000/car/booknow", data).then();
+};
 </script>
 
 <style scoped>

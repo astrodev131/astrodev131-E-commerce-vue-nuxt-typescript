@@ -9,6 +9,8 @@
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }

@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
 import axios from "axios";
+import { useCookie } from "nuxt/app";
 
 // Define interfaces
 interface LoginParam {
