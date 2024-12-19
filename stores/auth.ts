@@ -46,10 +46,6 @@ export const useAuthStore = defineStore("auth", {
           token.value = response.data.token;
           this.authenticated = true;
           alert(response?.data?.message); // Show success message
-          this.userData = {
-            name: response?.data?.user.name,
-            email: response?.data?.user.email,
-          };
         }
       } catch (error: any) {
         console.log(error.response?.data?.errors[0]?.path);
@@ -86,10 +82,6 @@ export const useAuthStore = defineStore("auth", {
           token.value = response.data.token;
           this.authenticated = true;
           alert(response?.data?.message); // Show success message
-          this.userData = {
-            name: response?.data?.user.name,
-            email: response?.data?.user.email,
-          };
         }
         // alert(message.value.message);
       } catch (error: any) {
