@@ -18,6 +18,7 @@ const overviewdata = reactive({
   img3: "",
   img4: "http://172.20.106.13:3000/images/car_bg.png",
   name: "",
+  sort: "car"
   
 });
 

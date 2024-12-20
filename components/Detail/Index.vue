@@ -18,6 +18,7 @@ interface overviewdata {
   img3: string;
   img4: string;
   name: string;
+  sort: string;
 }
 
 // Define the interface for each specification

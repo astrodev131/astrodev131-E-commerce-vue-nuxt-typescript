@@ -17,8 +17,9 @@ const overviewdata = reactive({
    img2: "http://172.20.106.13:3000/images/chip1-2.png",
    img3: "",
    img4: "http://172.20.106.13:3000/images/motercyclebg.png",
+   name: "",
+   sort: "bike"
 
-  name: "",
 
 });
  const specifications = [

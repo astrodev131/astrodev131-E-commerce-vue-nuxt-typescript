@@ -184,6 +184,7 @@ interface OverviewData {
     img3: string;
     img4: string;
     name: string;
+    sort: string;
   };
 }
 
@@ -225,6 +226,7 @@ const price = computed(() => {
 
 const handleBooking = async () => {
   const data = {
+    sort: datas.overviewdata.sort,
     username: useAuthStore().userData?.name,
     useremail: useAuthStore().userData?.email,
     name: datas.overviewdata.name,
@@ -236,7 +238,7 @@ const handleBooking = async () => {
   };
 
   try {
-    const res = await axios.post("http://localhost:5000/car/booknow", data);
+    const res = await axios.post("http://localhost:5000/booknow", data);
     console.log("Booking Successful:", res.data);
   } catch (error) {
     console.error("Booking Failed:", error);
