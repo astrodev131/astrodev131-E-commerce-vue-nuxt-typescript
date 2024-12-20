@@ -238,7 +238,7 @@ const handleBooking = async () => {
   };
 
   try {
-    const res = await axios.post("http://localhost:5000/booknow", data);
+    const res = await axios.post("http://localhost:5000/book/booking", data);
     console.log("Booking Successful:", res.data);
   } catch (error) {
     console.error("Booking Failed:", error);
